@@ -191,11 +191,12 @@
 	NSURL *URL = [NSURL URLWithString:[command.arguments objectAtIndex:0]];
 //    NSDictionary *parameters = [command.arguments objectAtIndex:1];
 //    NSDictionary *headers = [command.arguments objectAtIndex:2];
-	NSURL *filePath = [NSURL fileURLWithPath:[command.arguments objectAtIndex: 3];
+	NSURL *filePath = [NSURL fileURLWithPath:[command.arguments objectAtIndex: 3]];
 //    NSString *name = [command.arguments objectAtIndex: 4];
 
 	NSURLRequest *request = [NSURLRequest requestWithURL:URL];
 
+    CordovaHttpPlugin* __weak weakSelf = self;
 	NSURLSessionUploadTask *uploadTask = [manager
 		uploadTaskWithRequest:request
 		fromFile:filePath progress:nil
