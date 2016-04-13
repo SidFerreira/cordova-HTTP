@@ -62,6 +62,10 @@ var http = {
         headers = mergeHeaders(this.headers, headers);
         return exec(success, failure, "CordovaHttpPlugin", "uploadFile", [url, params, headers, filePath, name]);
     },
+    putFile: function(url, params, headers, filePath, name, success, failure) {
+        headers = mergeHeaders(this.headers, headers);
+        return exec(success, failure, "CordovaHttpPlugin", "putFile", [url, params, headers, filePath, name]);
+    },
     downloadFile: function(url, params, headers, filePath, success, failure) {
         /*
          *
